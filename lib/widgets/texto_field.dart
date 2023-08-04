@@ -5,15 +5,15 @@ import 'package:proyecto4_bola8/utils/colors.dart';
 import '../cubit/textfield_data_cubit.dart';
 
 class TextoField extends StatelessWidget {
-  const TextoField({
+  TextoField({
     Key? key,
   }) : super(key: key);
 
+  ///[myController] to obtain the information to from the question
+  TextEditingController myController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    ///[myController] to obtain the information to from the question
-    TextEditingController myController = TextEditingController();
-
     return SizedBox(
         width: 380,
         height: 120,

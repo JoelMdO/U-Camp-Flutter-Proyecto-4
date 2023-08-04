@@ -9,8 +9,4 @@ class RandomAnswer {
     "Defenitivamente no",
     "Prefiero no contestar",
   ];
-  // static String _getRandomAnswer() {
-  //   Random random = Random();
-  //   return answers[random.nextInt(9)];
-  // }
 }

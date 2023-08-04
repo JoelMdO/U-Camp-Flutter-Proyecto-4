@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:proyecto4_bola8/cubit/textfield_data_cubit.dart';
-import 'package:proyecto4_bola8/widgets/open_dialog.dart';
+import 'package:proyecto4_bola8/presentation/pages/answer_page.dart';
 
 // ignore: must_be_immutable
 class ButtonSubmit extends StatefulWidget {
@@ -57,7 +57,10 @@ class _ButtonSubmitState extends State<ButtonSubmit>
                   _rotateBall();
                   final userQuestionInfo =
                       context.read<TextfieldDataCubit>().state.userQuestion;
-                  OpenDialog.openDS(context, userQuestionInfo);
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => AnswerPage(
+                            userQuestioInfo: userQuestionInfo,
+                          )));
                 },
                 child: AnimatedBuilder(
                   animation: _controller,

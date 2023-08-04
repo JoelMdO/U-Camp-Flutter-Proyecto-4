@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:proyecto4_bola8/cubit/cubit/accelerometer_data_cubit_cubit.dart';
 import 'package:proyecto4_bola8/cubit/textfield_data_cubit.dart';
 import 'package:proyecto4_bola8/presentation/pages/consulta.dart';
+import 'package:proyecto4_bola8/presentation/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,14 +20,11 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
         ),
-        home: MultiBlocProvider(
-          providers: [
-            BlocProvider<TextfieldDataCubit>(
-                create: (context) => TextfieldDataCubit()),
-            BlocProvider<AccelerometerDataCubit>(
-                create: (context) => AccelerometerDataCubit())
-          ],
-          child: const ConsultaPage(),
-        ));
+        home: MultiBlocProvider(providers: [
+          BlocProvider<TextfieldDataCubit>(
+              create: (context) => TextfieldDataCubit()),
+          BlocProvider<AccelerometerDataCubit>(
+              create: (context) => AccelerometerDataCubit()),
+        ], child: const Home()));
   }
 }
